@@ -2,7 +2,7 @@ group 'fr.skyost.flutter_funding_choices'
 version '0.0.1'
 
 buildscript {
-    ext.kotlin_version = '1.9.20'
+    ext.kotlin_version = '1.8.22'
     repositories {
         google()
         mavenCentral()
@@ -37,6 +37,16 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+
+    // ✅ Add this:
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
 
